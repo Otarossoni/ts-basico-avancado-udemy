@@ -38,3 +38,25 @@ setTimeout(function () {
   const sallary: number = 1000;
   console.log(sallary);
 }, 2000);
+
+// Aula 07 - Tipos em Objeto
+function passCoordinates(coord: { x: number; y: number }) {
+  console.log("X coordinates: " + coord.x);
+  console.log("Y coordinates: " + coord.y);
+}
+
+const objCoord = { x: 15, y: 20 };
+
+passCoordinates(objCoord);
+
+// Aula 08 - Propriedades Opcionais
+function showNumbers(a: number, b: number, c?: number) {
+  console.log("A: " + a);
+  console.log("B: " + b);
+  if (c) {
+    console.log("C: " + c);
+  }
+}
+
+showNumbers(1, 2, 3);
+showNumbers(4, 5);
