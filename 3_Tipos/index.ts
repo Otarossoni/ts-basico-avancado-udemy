@@ -60,3 +60,45 @@ function showNumbers(a: number, b: number, c?: number) {
 
 showNumbers(1, 2, 3);
 showNumbers(4, 5);
+
+// Aula 09 - Validação de argumentos opcionais
+function advancedGreeting(firstName: string, lastName?: string) {
+  if (lastName !== undefined) {
+    return `Olá, ${firstName} ${lastName}, tudo bem?`;
+  }
+
+  return `Olá, ${firstName}, tudo bem?`;
+}
+
+console.log(advancedGreeting("Otávio", "Rossoni"));
+console.log(advancedGreeting("Otávio"));
+
+// Aula 10 - Union Type - Parte 01
+function showBalance(balance: string | number) {
+  console.log(`O saldo da conta é R$${balance}`);
+}
+
+showBalance(100);
+showBalance("500");
+// showBalance(true);
+
+// Aula 11 - Union Type - Parte 02
+function showUserRole(role: boolean | string) {
+  if (typeof role === "boolean") {
+    return "Usuário não aprovado!";
+  }
+  return `A função do usuário é: ${role}`;
+}
+
+console.log(showUserRole(false));
+console.log(showUserRole("Admin"));
+
+// Aula 12 - Type Alias
+type ID = string | number;
+
+function showId(id: ID) {
+  console.log(`O ID é: ${id}`);
+}
+
+showId(1);
+showId("200");
