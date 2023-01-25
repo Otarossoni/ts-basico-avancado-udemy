@@ -102,3 +102,72 @@ function showId(id: ID) {
 
 showId(1);
 showId("200");
+
+// Aula 13 - Inteface
+interface Point {
+  x: number;
+  y: number;
+  z: number;
+}
+
+function showCoords(obj: Point) {
+  console.log(`X: ${obj.x} - Y: ${obj.y} - Z: ${obj.z}`);
+}
+
+const coordObj: Point = {
+  x: 10,
+  y: 15,
+  z: 20,
+};
+
+showCoords(coordObj);
+
+// Aula 14 - Interface X Type Alias
+interface Person {
+  name: string;
+}
+
+interface Person {
+  age: number;
+}
+
+const somePerson: Person = { name: "Otávio", age: 20 };
+console.log(somePerson);
+
+type personType = {
+  name: string;
+};
+
+// type personType = {
+//   age: number
+// }
+
+// Aula 15 - Literal Types
+let test: "testando";
+
+test = "testando";
+
+console.log(test);
+
+function showDirection(direction: "left" | "right" | "center") {
+  console.log(`A direção é ${direction}`);
+}
+
+showDirection("center");
+// showDirection("top")
+
+// Aula 16 - Non null operator
+const p = document.getElementById("some-p");
+console.log(p!.innerText);
+
+// Aula 17 - Big Int
+let n: bigint;
+n = 1000n;
+console.log(n);
+
+// Aula 18 - Symbol
+let symbolA: symbol = Symbol("A");
+let symbolB = Symbol("A");
+
+console.log(symbolA == symbolB);
+console.log(symbolA === symbolB);
